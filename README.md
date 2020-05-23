@@ -13,4 +13,5 @@ Tracing and Debugging Code:
 Javascript/algorithms exercises
 
 
-Javascript (Vanilla) project (https://docs.google.com/document/d/1svic84w3GIxSdd6prFzZ25k6vkzzbS-4eDi5JQ8tbFg/edit#)
+Javascript (Vanilla) project (https://github.com/Migracode-Barcelona/exercises-js3-crud)
+(https://docs.google.com/document/d/1svic84w3GIxSdd6prFzZ25k6vkzzbS-4eDi5JQ8tbFg/edit#)
