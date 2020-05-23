@@ -5,12 +5,14 @@ const notification = document.getElementsByClassName('notification')[0];
 let weather;
 
 const kelvin = 273.15;
-kelvin=kelvin+t;
+//kelvin=kelvin+t;
 
 getLocation();
+console.log("A");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        console.log("B");
     }
 }
 
@@ -36,12 +38,13 @@ function onSuccess(position) {
                 console.log(weatherInfo.weather[0].main);
                 console.log(weatherInfo.name);
                 render(weatherInfo);
+                console.log("C");
             });
 }
 
 function render(temp){
     let myElement = document.querySelector("#temp");
-    myElement.innerText = temp;
+    myElement.innerText = kelvinToCelsius(temp.main.temp).toFixed(1);
 }
 
 function onError(error) {
