@@ -1,13 +1,13 @@
 GIT:
--Git commands
--Use of Git and Visual Code
--Make a public project portfolio with your account github.io
+* Git commands
+* Use of Git and Visual Code
+* Make a public project portfolio with your account github.io
 
 
 Tracing and Debugging Code:
--How the code is executed? functions, loops, callbacks, events
--Read error messages
--Debugging example with Chrome Development Tools
+* How the code is executed? functions, loops, callbacks, events
+* Read error messages
+* Debugging example with Chrome Development Tools
 
 
 Javascript/algorithms exercises
