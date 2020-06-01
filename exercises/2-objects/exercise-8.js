@@ -103,7 +103,7 @@ var mentors = [
 
 // 1
 
-console.log("Exercise 1")
+console.log("Exercise 1 with loops")
 
 for (let i = 0; i < mentors.length; i++) {
     if (mentors[i].job.city === "Barcelona" && mentors[i].skills.includes("React")) {
@@ -111,7 +111,14 @@ for (let i = 0; i < mentors.length; i++) {
     }
 }
 
-console.log("Exercise 2")
+console.log("Exercise 1 with arrays (filter)")
+// Remember that function filter for an array will get a con dition and will keep the elements of the array which met such condition
+const filteredArray = mentors.filter(mentor => mentor.skills.includes("React") && mentor.job.city === "Barcelona");
+filteredArray.forEach(
+    mentorInBarcelonaWithReact => console.log(`Hi, my name is ${mentorInBarcelonaWithReact.firstName} ${mentorInBarcelonaWithReact.lastName}. I work in Barcelona and i know React.`)
+)
+
+console.log("Exercise 2 with loops")
 
 for (let i = 0; i < mentors.length; i++) {
     if (mentors[i].job.city === "Barcelona") {
@@ -124,7 +131,20 @@ for (let i = 0; i < mentors.length; i++) {
     }
 }
 
-function addSkill(listOnMentors, skillToAdd) {
+console.log("Exercise 2 with arrays (filter)")
+const filteredArray2 = mentors.filter(mentor => mentor.job.city === "Barcelona");
+filteredArray.forEach(
+    mentorInBarcelona => {
+        mentorInBarcelona.class = "Jun1";
+        if (mentorInBarcelona.skills.includes("SQL")) {
+            mentorInBarcelona.skills.push("SQL")
+        }
+    }
+)
+
+// Exercise 3. Function to add a skill
+// As a reminder can build a function by assigning to a variable a function
+let addSkill = (listOnMentors, skillToAdd) => {
     for (let i = 0; i < listOnMentors.length; i++) {
         if (!listOnMentors[i].skills.includes(skillToAdd)) {
             listOnMentors[i].skills.push(skillToAdd);
@@ -145,5 +165,5 @@ function mentorWithMoreSkills(listOnMentors) {
 }
 
 let mentorA = mentorWithMoreSkills(mentors);
-console.log(`Mentor with more skills is ${mentorA.firstName}` )
+console.log(`Mentor with more skills is ${mentorA.firstName}`)
 
