@@ -41,63 +41,109 @@ function removeSkill(mentors,newSkill){
 function addStudentLikes(mentors){
   //your code here
 }
-*/ 
+*/
 
 var mentors = [
-  {
-    firstName: "Antonio",
-    lastName: "Miranda",
-    skills: ["JS","React","Node"],
-    class: "Mar1",
-    studentLikes: 0,
-    job:
-      {
-        company: "Google",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
-  },
-  {
-    firstName: "Leo",
-    lastName: "Messi",
-    skills: ["Play football"],
-    class: "Mar3",
-    studentLikes: 0,
-    job:
-      {
-        company: "FC Barcelona",
-        position: "Player",
-        city: "Barcelona"
-      }
-  },
-  {
-    firstName: "John",
-    lastName: "VanDamme",
-    skills: ["React","Angular","Python","Node"],
-    class: "Mar4",
-    studentLikes: 0,
-    job:
-      {
-        company: "Facebook",
-        position: "Software Manager",
-        city: "Chicago"
-      }
-  },  
-  {
-    firstName: "Giorgio",
-    lastName: "Polvara",
-    skills: ["HTML","JS","React"],
-    class: "Mar2",
-    studentLikes: 0,
-    job:
-      {
-        company: "Amazon",
-        position: "Senior developer",
-        city: "Barcelona"
-      }
-  },
+    {
+        firstName: "Antonio",
+        lastName: "Miranda",
+        skills: ["JS", "React", "Node"],
+        class: "Mar1",
+        studentLikes: 0,
+        job:
+            {
+                company: "Google",
+                position: "Senior developer",
+                city: "Barcelona"
+            }
+    },
+    {
+        firstName: "Leo",
+        lastName: "Messi",
+        skills: ["Play football"],
+        class: "Mar3",
+        studentLikes: 0,
+        job:
+            {
+                company: "FC Barcelona",
+                position: "Player",
+                city: "Barcelona"
+            }
+    },
+    {
+        firstName: "John",
+        lastName: "VanDamme",
+        skills: ["React", "Angular", "Python", "Node"],
+        class: "Mar4",
+        studentLikes: 0,
+        job:
+            {
+                company: "Facebook",
+                position: "Software Manager",
+                city: "Chicago"
+            }
+    },
+    {
+        firstName: "Giorgio",
+        lastName: "Polvara",
+        skills: ["HTML", "JS", "React"],
+        class: "Mar2",
+        studentLikes: 0,
+        job:
+            {
+                company: "Amazon",
+                position: "Senior developer",
+                city: "Barcelona"
+            }
+    },
 
 ];
 
 //YOUR CODE HERE
+
+// 1
+
+console.log("Exercise 1")
+
+for (let i = 0; i < mentors.length; i++) {
+    if (mentors[i].job.city === "Barcelona" && mentors[i].skills.includes("React")) {
+        console.log(`Hi, my name is ${mentors[i].firstName} ${mentors[i].lastName}. I work in Barcelona and i know React.`)
+    }
+}
+
+console.log("Exercise 2")
+
+for (let i = 0; i < mentors.length; i++) {
+    if (mentors[i].job.city === "Barcelona") {
+        mentors[i].class = "Jun1";
+        if (!mentors[i].skills.includes("SQL")) {
+            mentors[i].skills.push("SQL");
+        }
+
+        console.log(`Hi, my name is ${mentors[i].firstName} ${mentors[i].lastName}. I work in Barcelona. Class is ${mentors[i].class} and skills ${mentors[i].skills}`)
+    }
+}
+
+function addSkill(listOnMentors, skillToAdd) {
+    for (let i = 0; i < listOnMentors.length; i++) {
+        if (!listOnMentors[i].skills.includes(skillToAdd)) {
+            listOnMentors[i].skills.push(skillToAdd);
+        }
+    }
+}
+
+function mentorWithMoreSkills(listOnMentors) {
+    let mentorWithMaxSkills = null;
+    let maxSkills = 0;
+    for (let i = 0; i < listOnMentors.length; i++) {
+        if (listOnMentors[i].skills.length >= maxSkills) {
+            maxSkills = listOnMentors[i].skills.length;
+            mentorWithMaxSkills = listOnMentors[i];
+        }
+    }
+    return mentorWithMaxSkills;
+}
+
+let mentorA = mentorWithMoreSkills(mentors);
+console.log(`Mentor with more skills is ${mentorA.firstName}` )
 
