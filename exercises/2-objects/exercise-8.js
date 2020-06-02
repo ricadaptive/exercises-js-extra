@@ -43,6 +43,8 @@ function addStudentLikes(mentors){
 }
 */
 
+
+
 var mentors = [
     {
         firstName: "Antonio",
@@ -50,6 +52,11 @@ var mentors = [
         skills: ["JS", "React", "Node"],
         class: "Mar1",
         studentLikes: 0,
+        addSkill: newSkill => {
+            if (!this.skills.includes(newSkill)) {
+                this.skills.push(newSkill);
+            }
+        },
         job:
             {
                 company: "Google",
@@ -63,6 +70,11 @@ var mentors = [
         skills: ["Play football"],
         class: "Mar3",
         studentLikes: 0,
+        addSkill: newSkill => {
+            if (!this.skills.includes(newSkill)) {
+                this.skills.push(newSkill);
+            }
+        },
         job:
             {
                 company: "FC Barcelona",
@@ -76,6 +88,11 @@ var mentors = [
         skills: ["React", "Angular", "Python", "Node"],
         class: "Mar4",
         studentLikes: 0,
+        addSkill: newSkill => {
+            if (!this.skills.includes(newSkill)) {
+                this.skills.push(newSkill);
+            }
+        },
         job:
             {
                 company: "Facebook",
@@ -89,6 +106,11 @@ var mentors = [
         skills: ["HTML", "JS", "React"],
         class: "Mar2",
         studentLikes: 0,
+        addSkill: newSkill => {
+            if (!this.skills.includes(newSkill)) {
+                this.skills.push(newSkill);
+            }
+        },
         job:
             {
                 company: "Amazon",
@@ -98,6 +120,16 @@ var mentors = [
     },
 
 ];
+
+for (let i = 0; i < mentors.length; i++) {
+    if (mentors[i].job.city === "Barcelona") {
+        mentors[i].class = "Jun1";
+        if (!mentors[i].skills.includes("SQL")) {
+            mentors[i].skills.push("SQL")
+        }
+    }
+    console.log(`Hi, my name is ${mentors[i].firstName} ${mentors[i].lastName}. I work in Barcelona. Class is ${mentors[i].class} and skills ${mentors[i].skills}`)
+}
 
 //YOUR CODE HERE
 
@@ -142,15 +174,14 @@ filteredArray.forEach(
     }
 )
 
-// Exercise 3. Function to add a skill
-// As a reminder can build a function by assigning to a variable a function
-let addSkill = (listOnMentors, skillToAdd) => {
-    for (let i = 0; i < listOnMentors.length; i++) {
-        if (!listOnMentors[i].skills.includes(skillToAdd)) {
-            listOnMentors[i].skills.push(skillToAdd);
-        }
+// Exercise 4. Function to add a skill to a list of mentors.
+// We are using addSkill method we added to the object (exercise 3)
+function addSkillToAllMentors(listOfMentors, skillToAdd) {
+    for (let i = 0; i < listOfMentors.length; i++) {
+        listOfMentors[i].addSkill(skillToAdd);
     }
 }
+
 
 function mentorWithMoreSkills(listOnMentors) {
     let mentorWithMaxSkills = null;
