@@ -40,12 +40,14 @@ class Mentor {
         this.studentLikes = 0;
     }
 
+    // Now we can DECLARE the function addSkill in a single place and it will be accessible to all instances.
     addSkill(newSkill) {
         if (!this.skills.includes(newSkill)) {
             this.skills.push(newSkill);
         }
     }
 
+    // This function is not part of the exercises. Just to show how that we can implement as many as we want.
     addStudentLike() {
         this.studentLikes++;
     }
