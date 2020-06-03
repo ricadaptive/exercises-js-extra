@@ -61,6 +61,9 @@ var mentors = [
     new Mentor("Giorgio", "Polvara", "Mar2", ["HTML", "JS", "React"], new Job("Amazon", "Senior developer", "Barcelona"))
 ];
 
+
+// And then the good point is that all the implementation we did keeps working!!!!!
+
 for (let i = 0; i < mentors.length; i++) {
     if (mentors[i].job.city === "Barcelona") {
         mentors[i].class = "Jun1";
@@ -70,8 +73,6 @@ for (let i = 0; i < mentors.length; i++) {
     }
     console.log(`Hi, my name is ${mentors[i].firstName} ${mentors[i].lastName}. I work in Barcelona. Class is ${mentors[i].class} and skills ${mentors[i].skills}`)
 }
-
-// And then the good point is that all the implementation we did keeps working!!!
 
 // 1
 
