@@ -29,7 +29,7 @@ class Job {
 }
 
 class Mentor {
-    // Note here that clazz is an array, and job an instance of Job class.
+    // Note here that skills is an array, and job an instance of Job class.
     // Here we are also copying the values in internal except for studentLikes as this is set to 0 when the mentor is initialized.
     constructor(firstName, lastName, clazz, skills, job) {
         this.firstName = firstName;
