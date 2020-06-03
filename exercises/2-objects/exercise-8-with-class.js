@@ -34,7 +34,7 @@ class Mentor {
     constructor(firstName, lastName, clazz, skills, job) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.clazz = clazz;
+        this.class = clazz;
         this.skills = skills;
         this.job = job;
         this.studentLikes = 0;
